@@ -1,0 +1,54 @@
+---
+# defaults file for postgresql common role
+
+
+# Clusters and Databases to ensure exist.
+postgresql_clusters: []
+
+# postgres OS user and group
+postgresql_user: postgres
+postgresql_group: postgres
+
+# postgres service name
+postgresql_service_name: 'dbpostgres'
+
+# psql environment options used while connecting to a database
+postgresql_env_pgoptions: 'env PGOPTIONS="-c log_statement=none -c log_min_messages=panic -c log_min_error_statement=panic"'
+
+# postgres backup user
+postgresql_backup_user: backup
+
+# postgres nagios user
+postgresql_nagios_user: nagios
+
+# datavg and binvg mountpoint prefixes
+postgresql_datavg_mountpoint_prefix: /postgres/data
+postgresql_binvg_mountpoint_prefix: /postgres/apps
+postgresql_backupvg_mountpoint_prefix: /postgres/backup
+
+# parent directory for PostgreSQL homes
+postgresql_pghomes_directory: '{{ postgresql_binvg_mountpoint_prefix }}/homes'
+
+# prefix used in PostgreSQL home directories
+postgresql_pghomes_binary_prefix: 'binary-'
+
+# scripts directory
+postgresql_scripts_directory: /home/{{ postgresql_user }}/bin
+
+# password file name
+postgresql_passfile: '.pgpass'
+
+#
+# Software distribution
+#
+
+postgresql_binary_packages_directory: /software/postgres/binary
+
+postgresql_scripts_sql_directory: /home/postgres/sql
+postgresql_scripts_sql_log_directory: /home/postgres/sql/log
+
+#
+# HA config
+#
+postgresql_switchover_trigger_file: 'switchover.trigger.file'
+

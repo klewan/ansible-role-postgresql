@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Krzysztof Lewandowski
+  description: PostgreSQL Common Role
+  
+
+  license: GPLv3
+
+  min_ansible_version: 2.3
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+
+  galaxy_tags:
+  - postgresql
+  - databases
+
+dependencies: []
+
